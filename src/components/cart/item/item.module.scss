@@ -1,0 +1,53 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem;
+  border-bottom: 1px solid #f0eef1;
+
+  &:nth-child(1) {
+    border-top: 1px solid #f0eef1;
+  }
+
+  .titleAndPrice {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+    align-items: baseline;
+    width: 100%;
+
+    .title {
+      width: 100%;
+      margin: 0;
+    }
+
+    .price {
+      margin: 0;
+      width: 50%;
+    }
+  }
+
+  .descriptionAndAction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+    .description {
+      color: #9479ff;
+      margin: 0;
+      width: 100%;
+    }
+
+    .action {
+      appearance: none;
+      border: none;
+      width: 50%;
+      max-width: 5rem;
+      height: 2rem;
+      background: #e6e4e7;
+      cursor: pointer;
+    }
+  }
+}
