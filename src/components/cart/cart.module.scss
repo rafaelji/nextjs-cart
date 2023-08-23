@@ -1,4 +1,7 @@
 .cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-top: 4px solid #957afe;
   width: 100%;
   max-width: 18rem;
@@ -10,5 +13,10 @@
 
   .title {
     margin: 0 0 2rem;
+  }
+
+  .items {
+    overflow-x: auto;
+    margin: 0 0 1rem;
   }
 }
