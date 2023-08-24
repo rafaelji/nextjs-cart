@@ -1,5 +1,6 @@
 import styles from "./product.module.scss";
 import { ProductProps } from "@/components/catalog/product/product.types";
+
 export const Product = ({ image, title, price }: ProductProps) => {
   return (
     <article className={styles.product}>
