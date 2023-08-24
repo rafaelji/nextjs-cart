@@ -1,6 +1,12 @@
 "use client";
-import { createContext, ReactNode, useState } from "react";
-import { Product } from "@/services/product";
+import {
+  createContext,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from "react";
+import productService, { Product } from "@/services/product";
 import { CatalogProviderProps } from "@/providers/catalog/catalog-provider.types";
 
 export const CatalogContext = createContext<CatalogProviderProps>({
@@ -10,6 +16,15 @@ export const CatalogContext = createContext<CatalogProviderProps>({
 
 export const CatalogProvider = ({ children }: { children: ReactNode }) => {
   const [productList, setProductList] = useState<Product[]>([]);
+
+  const getProducts = useCallback(async () => {
+    const response = await productService.getProducts("price", "desc");
+    setProductList(response);
+  }, []);
+
+  useEffect(() => {
+    getProducts();
+  }, [getProducts]);
 
   return (
     <CatalogContext.Provider

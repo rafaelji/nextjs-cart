@@ -12,6 +12,7 @@ import { FilterEnum } from "@/components/catalog/filter/filter.types";
 import { CatalogContext } from "@/providers/catalog";
 
 export const Filter = () => {
+  const isMounted = useRef(false);
   const { setUpdatedProductList } = useContext(CatalogContext);
   const [filter, setFilter] = useState<FilterEnum>(FilterEnum.HighestPrice);
 
@@ -41,7 +42,11 @@ export const Filter = () => {
   }, [filter, setUpdatedProductList]);
 
   useEffect(() => {
-    getProducts();
+    if (isMounted.current) {
+      getProducts();
+    } else {
+      isMounted.current = true;
+    }
   }, [getProducts]);
 
   return (
