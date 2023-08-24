@@ -1,10 +1,12 @@
+"use client";
 import styles from "./catalog.module.scss";
 import Filter from "@/components/catalog/filter";
 import Product from "@/components/catalog/product";
-import productService from "@/services/product";
+import { CatalogContext } from "@/providers/catalog";
+import { useContext, useEffect, useRef } from "react";
 
-export const Catalog = async () => {
-  const productList = await productService.getProducts();
+export const Catalog = () => {
+  const { updatedProductList } = useContext(CatalogContext);
 
   return (
     <section className={styles.catalog}>
@@ -12,7 +14,7 @@ export const Catalog = async () => {
         <Filter />
       </aside>
       <section className={styles.productList}>
-        {productList.map((product) => (
+        {updatedProductList.map((product) => (
           <Product
             key={product.id}
             id={product.id}

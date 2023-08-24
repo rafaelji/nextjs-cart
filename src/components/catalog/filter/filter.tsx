@@ -1,12 +1,19 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import styles from "./filter.module.scss";
 import productService from "@/services/product";
 import { FilterEnum } from "@/components/catalog/filter/filter.types";
+import { CatalogContext } from "@/providers/catalog";
 
 export const Filter = () => {
+  const { setUpdatedProductList } = useContext(CatalogContext);
   const [filter, setFilter] = useState<FilterEnum>(FilterEnum.HighestPrice);
-  const isMounted = useRef(false);
 
   const getProducts = useCallback(async () => {
     let param = "";
@@ -30,14 +37,11 @@ export const Filter = () => {
     }
 
     const productList = await productService.getProducts(param, order);
-  }, [filter]);
+    setUpdatedProductList(productList);
+  }, [filter, setUpdatedProductList]);
 
   useEffect(() => {
-    if (isMounted.current) {
-      getProducts();
-    } else {
-      isMounted.current = true;
-    }
+    getProducts();
   }, [getProducts]);
 
   return (
@@ -49,7 +53,10 @@ export const Filter = () => {
       }}
     >
       {Object.keys(FilterEnum).map((option) => (
-        <option key={option} value={option}>
+        <option
+          key={option}
+          value={FilterEnum[option as keyof typeof FilterEnum]}
+        >
           {FilterEnum[option as keyof typeof FilterEnum]}
         </option>
       ))}
