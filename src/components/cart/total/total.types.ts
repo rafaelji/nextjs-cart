@@ -1,3 +1,3 @@
 export interface TotalProps {
-  value: string;
+  value: number;
 }

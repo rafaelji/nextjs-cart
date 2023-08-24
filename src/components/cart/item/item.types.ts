@@ -1,5 +1,5 @@
 export interface ItemProps {
-  id: number;
+  id: string;
   title: string;
   description: string;
   price: string;
