@@ -23,11 +23,13 @@
     .title {
       width: 100%;
       margin: 0;
+      font-size: 15px;
     }
 
     .price {
       margin: 0;
       width: 120px;
+      font-size: 15px;
 
       @media (min-width: $grid-md-breakpoint) and (max-width: calc($grid-lg-breakpoint - 1px)) {
         width: 90px;
@@ -46,6 +48,7 @@
       color: $primary;
       margin: 0;
       width: 100%;
+      font-size: 15px;
     }
 
     .action {
@@ -56,6 +59,7 @@
       height: 2rem;
       background: $secondary;
       cursor: pointer;
+      font-size: 10px;
     }
   }
 }
