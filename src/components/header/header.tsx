@@ -13,7 +13,7 @@ export const Header = () => {
       </div>
       <div className={styles.cart}>
         <div className={styles.total}>${cart.total}</div>
-        <CartAmount amount={cart.cartItems.length} />
+        <CartAmount amount={cart?.cartItems?.length ?? 0} />
       </div>
     </nav>
   );

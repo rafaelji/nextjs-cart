@@ -12,10 +12,10 @@ export const Cart = () => {
     <aside className={styles.cart}>
       <section className={styles.titleContainer}>
         <h2 className={styles.title}>CART</h2>
-        <CartAmount amount={cart.cartItems.length} />
+        <CartAmount amount={cart?.cartItems?.length} />
       </section>
       <section className={styles.items}>
-        {cart.cartItems.map((item) => (
+        {cart?.cartItems?.map((item) => (
           <Item
             key={item.id}
             id={item.id}
