@@ -18,8 +18,12 @@ export const CatalogProvider = ({ children }: { children: ReactNode }) => {
   const [productList, setProductList] = useState<Product[]>([]);
 
   const getProducts = useCallback(async () => {
-    const response = await productService.getProducts("price", "desc");
-    setProductList(response);
+    try {
+      const response = await productService.getProducts("price", "desc");
+      setProductList(response);
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
 
   useEffect(() => {

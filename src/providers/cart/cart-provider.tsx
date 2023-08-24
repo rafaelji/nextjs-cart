@@ -18,8 +18,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<Cart>({ cartItems: [], total: 0 });
 
   const getCart = useCallback(async () => {
-    const response = await cartService.getCart();
-    setCart(response);
+    try {
+      const response = await cartService.getCart();
+      setCart(response);
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
 
   useEffect(() => {

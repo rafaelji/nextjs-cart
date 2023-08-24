@@ -17,28 +17,32 @@ export const Filter = () => {
   const [filter, setFilter] = useState<FilterEnum>(FilterEnum.HighestPrice);
 
   const getProducts = useCallback(async () => {
-    let param = "";
-    let order = "";
+    try {
+      let param = "";
+      let order = "";
 
-    if (filter === FilterEnum.HighestPrice) {
-      param = "price";
-      order = "desc";
-    }
-    if (filter === FilterEnum.LowestPrice) {
-      param = "price";
-      order = "asc";
-    }
-    if (filter === FilterEnum.AZ) {
-      param = "title";
-      order = "asc";
-    }
-    if (filter === FilterEnum.ZA) {
-      param = "title";
-      order = "desc";
-    }
+      if (filter === FilterEnum.HighestPrice) {
+        param = "price";
+        order = "desc";
+      }
+      if (filter === FilterEnum.LowestPrice) {
+        param = "price";
+        order = "asc";
+      }
+      if (filter === FilterEnum.AZ) {
+        param = "title";
+        order = "asc";
+      }
+      if (filter === FilterEnum.ZA) {
+        param = "title";
+        order = "desc";
+      }
 
-    const productList = await productService.getProducts(param, order);
-    setUpdatedProductList(productList);
+      const productList = await productService.getProducts(param, order);
+      setUpdatedProductList(productList);
+    } catch (error) {
+      console.error(error);
+    }
   }, [filter, setUpdatedProductList]);
 
   useEffect(() => {

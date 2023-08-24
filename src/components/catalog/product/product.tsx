@@ -9,8 +9,12 @@ export const Product = ({ id, image, title, price }: ProductProps) => {
   const { setCart } = useContext(CartContext);
 
   const addToCart = async () => {
-    const response = await cartService.addItem(`${id}`);
-    setCart(response);
+    try {
+      const response = await cartService.addItem(`${id}`);
+      setCart(response);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

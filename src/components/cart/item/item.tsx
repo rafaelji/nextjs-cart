@@ -7,8 +7,12 @@ export const Item = ({ id, title, description, price }: ItemProps) => {
   const { setCart } = useContext(CartContext);
 
   const removeItem = async () => {
-    const response = await cartService.removeItem(id);
-    setCart(response);
+    try {
+      const response = await cartService.removeItem(id);
+      setCart(response);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
