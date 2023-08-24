@@ -1,5 +1,6 @@
 @import "normalize.css/normalize.css";
 @import "./theme";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 html {
   box-sizing: border-box;
@@ -12,6 +13,7 @@ html {
 
 body {
   background: $background;
+  font-family: "Roboto", sans-serif;
 }
 
 main {
