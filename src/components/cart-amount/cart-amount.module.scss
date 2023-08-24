@@ -1,3 +1,5 @@
+@import "../../app/theme";
+
 .amount {
   display: flex;
   justify-content: center;
@@ -5,6 +7,6 @@
   border-radius: 100%;
   width: 2rem;
   height: 2rem;
-  color: #fff;
-  background: #9479ff;
+  color: $white;
+  background: $primary;
 }

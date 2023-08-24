@@ -1,7 +1,9 @@
+@import "../../app/theme";
+
 .hero {
   width: 100%;
   height: 16rem;
   display: flex;
-  background: #0e162a;
+  background: $hero-background;
   margin: 0 0 1rem;
 }

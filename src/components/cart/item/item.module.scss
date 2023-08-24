@@ -43,7 +43,7 @@
     gap: 0.5rem;
 
     .description {
-      color: #9479ff;
+      color: $primary;
       margin: 0;
       width: 100%;
     }
@@ -54,7 +54,7 @@
       width: 50%;
       max-width: 5rem;
       height: 2rem;
-      background: #e6e4e7;
+      background: $secondary;
       cursor: pointer;
     }
   }

@@ -1,9 +1,11 @@
+@import "../../../app/theme";
+
 .total {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: #e6e4e7;
+  background: $secondary;
   padding: 1rem;
   margin: auto 0 0;
 

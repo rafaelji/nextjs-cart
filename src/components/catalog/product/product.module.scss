@@ -6,7 +6,7 @@
   justify-content: center;
   width: 100%;
   max-width: 20rem;
-  background: #fff;
+  background: $white;
   padding: 1rem;
   box-shadow: 0 0 15px 0 rgba(230, 228, 231, 1);
 
@@ -19,7 +19,7 @@
   }
 
   .image {
-    background: #f5f3f6;
+    background: $background;
     padding: 1rem;
     height: 100%;
     max-height: 20rem;
@@ -45,11 +45,12 @@
     }
 
     .add {
-      color: #fff;
-      background: #9479ff;
+      color: $white;
+      background: $primary;
       cursor: pointer;
     }
     .details {
+      background: $secondary;
     }
   }
 }
