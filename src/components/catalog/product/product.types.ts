@@ -3,6 +3,6 @@ export interface ProductProps {
   image: string;
   title: string;
   price: string;
-  option1: string;
-  option2: string;
+  option1?: string;
+  option2?: string;
 }
