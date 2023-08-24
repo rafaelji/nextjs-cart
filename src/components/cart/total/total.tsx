@@ -5,10 +5,10 @@ export const Total = ({ value }: TotalProps) => {
     <section className={styles.total}>
       <div className={styles.information}>
         <p>Total</p>
-        <p>Inc. $0 in taxes</p>
+        <p>Inc. £0 in taxes</p>
       </div>
       <div className={styles.value}>
-        <h2>${value}</h2>
+        <h2>£{value}</h2>
       </div>
     </section>
   );

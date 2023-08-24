@@ -12,7 +12,7 @@ export const Header = () => {
         VF-APPAREL<sup>CO</sup>
       </div>
       <div className={styles.cart}>
-        <div className={styles.total}>${cart.total}</div>
+        <div className={styles.total}>£{cart.total}</div>
         <CartAmount amount={cart?.cartItems?.length ?? 0} />
       </div>
     </nav>

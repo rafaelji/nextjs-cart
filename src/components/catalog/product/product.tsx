@@ -18,7 +18,7 @@ export const Product = ({ id, image, title, price }: ProductProps) => {
       <img className={styles.image} src={image} alt={title} />
       <div className={styles.information}>
         <h2>{title}</h2>
-        <span className={styles.price}>${price}</span>
+        <span className={styles.price}>£{price}</span>
       </div>
       <div className={styles.actions}>
         <button className={styles.add} onClick={addToCart}>
