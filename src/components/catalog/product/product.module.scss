@@ -3,8 +3,10 @@
 .product {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
+  height: fit-content;
+  min-height: 32rem;
   max-width: 20rem;
   background: $white;
   padding: 1rem;
@@ -29,12 +31,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
+    gap: 1rem;
   }
 
   .actions {
     display: flex;
     flex-direction: row;
+    margin: auto 0 0;
 
     button {
       appearance: none;
