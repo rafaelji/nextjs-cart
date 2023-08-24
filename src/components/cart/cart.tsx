@@ -4,12 +4,16 @@ import Item from "@/components/cart/item";
 import Total from "@/components/cart/total";
 import { useContext } from "react";
 import { CartContext } from "@/providers/cart/cart-provider";
+import CartAmount from "@/components/cart-amount";
 export const Cart = () => {
   const { cart } = useContext(CartContext);
 
   return (
     <aside className={styles.cart}>
-      <h2 className={styles.title}>CART {cart.cartItems.length}</h2>
+      <section className={styles.titleContainer}>
+        <h2 className={styles.title}>CART</h2>
+        <CartAmount amount={cart.cartItems.length} />
+      </section>
       <section className={styles.items}>
         {cart.cartItems.map((item) => (
           <Item
