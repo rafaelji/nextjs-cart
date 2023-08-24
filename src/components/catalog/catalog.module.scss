@@ -1,6 +1,7 @@
+@import "../../app/theme";
+
 .catalog {
   width: 100%;
-  min-width: 63.063rem;
   max-width: 73rem;
   display: flex;
   flex-direction: column;
@@ -24,5 +25,6 @@
     flex-direction: row;
     gap: 1rem;
     flex-wrap: wrap;
+    justify-content: center;
   }
 }

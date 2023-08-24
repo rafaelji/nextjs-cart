@@ -1,3 +1,5 @@
+@import "../../../app/theme";
+
 .product {
   display: flex;
   flex-direction: column;
@@ -7,6 +9,14 @@
   background: #fff;
   padding: 1rem;
   box-shadow: 0 0 15px 0 rgba(230, 228, 231, 1);
+
+  @media (min-width: $grid-lg-breakpoint) {
+    max-width: 19rem;
+  }
+
+  @media (min-width: $grid-xl-breakpoint) {
+    max-width: 20rem;
+  }
 
   .image {
     background: #f5f3f6;

@@ -1,5 +1,5 @@
 "use client";
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Catalog from "@/components/catalog";

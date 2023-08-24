@@ -1,0 +1,11 @@
+@import "theme";
+
+.main {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 0 auto 2rem;
+
+  @media (min-width: $grid-lg-breakpoint) {
+    flex-direction: row;
+  }
+}

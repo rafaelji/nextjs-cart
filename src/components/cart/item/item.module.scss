@@ -1,3 +1,5 @@
+@import "../../../app/theme";
+
 .item {
   display: flex;
   flex-direction: column;
@@ -16,6 +18,7 @@
     margin-bottom: 0.5rem;
     align-items: baseline;
     width: 100%;
+    gap: 0.5rem;
 
     .title {
       width: 100%;
@@ -24,7 +27,11 @@
 
     .price {
       margin: 0;
-      width: 50%;
+      width: 120px;
+
+      @media (min-width: $grid-md-breakpoint) and (max-width: calc($grid-lg-breakpoint - 1px)) {
+        width: 90px;
+      }
     }
   }
 
@@ -33,6 +40,7 @@
     flex-direction: row;
     align-items: center;
     width: 100%;
+    gap: 0.5rem;
 
     .description {
       color: #9479ff;

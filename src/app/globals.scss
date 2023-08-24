@@ -1,0 +1,20 @@
+@import "normalize.css/normalize.css";
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #f5f3f6;
+}
+
+main {
+  width: fit-content;
+  height: 100%;
+  padding: 0 3rem;
+}
